@@ -8,6 +8,7 @@ const sliderApp = createApp({
             maxSlides: slides.length - 1,
             title: slides[0].title,
             description: slides[0].text,
+            autoPlayDelay: 3000,
         };
     },
 
@@ -29,7 +30,11 @@ const sliderApp = createApp({
         switchSlide(slide) {
             this.current = slide
         }
-    }
+    },
+
+    mounted(){
+        setInterval(this.next,this.autoPlayDelay);
+      }
 
 }).mount("#slider")
 
