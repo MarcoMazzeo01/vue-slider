@@ -39,7 +39,7 @@
 
 
                     <div v-for="(slide, index) in slidesData" class="thumb" :class="(index == current) ? 'active' : '' ">
-                        <img :src="slide.image" :alt="slide.text" />
+                        <img :src="slide.image" :alt="slide.text" @click="switchSlide(index)" />
                     </div>
 
 

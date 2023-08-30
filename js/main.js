@@ -25,6 +25,10 @@ const sliderApp = createApp({
             this.title = this.slidesData[this.current].title,
             this.description = this.slidesData[this.current].text
         },
+
+        switchSlide(slide) {
+            this.current = slide
+        }
     }
 
 }).mount("#slider")
