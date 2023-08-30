@@ -5,7 +5,9 @@ const sliderApp = createApp({
         return {
             slidesData: slides,
             current: 0,
-            maxSlides: slides.length - 1
+            maxSlides: slides.length - 1,
+            title: slides[0].title,
+            description: slides[0].text,
         };
     },
 
@@ -17,6 +19,8 @@ const sliderApp = createApp({
                 this.current = 0;
             }
             
+            this.title = slides[this.current].title,
+            this.description = slides[this.current].text,
             console.log(this.current)
             
         },
@@ -28,6 +32,8 @@ const sliderApp = createApp({
                 this.current--;
             }
             
+            this.title = slides[this.current].title,
+            this.description = slides[this.current].text,
             console.log(this.current)
         },
     }
