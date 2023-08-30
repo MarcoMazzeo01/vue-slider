@@ -13,28 +13,17 @@ const sliderApp = createApp({
 
     methods: {
         next() {
-            if (this.current < this.maxSlides ) {
-                this.current++;
-            } else {
-                this.current = 0;
-            }
+           this.current = (this.current < this.maxSlides) ? this.current + 1 : 0
             
-            this.title = slides[this.current].title,
-            this.description = slides[this.current].text,
-            console.log(this.current)
-            
+            this.title = this.slidesData[this.current].title,
+            this.description = this.slidesData[this.current].text
         },
 
         prev() {
-            if (this.current <= 0 ) {
-                this.current = this.maxSlides;
-            } else {
-                this.current--;
-            }
+            this.current = (this.current <= 0) ? this.maxSlides : this.current - 1
             
-            this.title = slides[this.current].title,
-            this.description = slides[this.current].text,
-            console.log(this.current)
+            this.title = this.slidesData[this.current].title,
+            this.description = this.slidesData[this.current].text
         },
     }
 
