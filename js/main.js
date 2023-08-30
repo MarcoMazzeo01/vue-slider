@@ -9,6 +9,8 @@ const sliderApp = createApp({
             title: slides[0].title,
             description: slides[0].text,
             autoPlayDelay: 3000,
+            hover: false,
+            autoPlay: '',
         };
     },
 
@@ -29,12 +31,19 @@ const sliderApp = createApp({
 
         switchSlide(slide) {
             this.current = slide
+        },
+
+        autoPlay(isHovering) {
+            // clearInterval(this.autoPlay)
+            // console.log(this.autoPlay)
+            
         }
     },
 
     mounted(){
-        setInterval(this.next,this.autoPlayDelay);
-      }
+       this.autoPlay = setInterval(this.next,this.autoPlayDelay);
+      },
+
 
 }).mount("#slider")
 
